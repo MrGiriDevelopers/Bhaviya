@@ -141,7 +141,7 @@ const Contact = () => {
                 <input
                   type="email"
                   className="w-full px-4 py-3 bg-surface-elevated border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                  placeholder="john.doe@example.com"
+                  placeholder="YourMailId@mail.com"
                 />
               </div>
 
