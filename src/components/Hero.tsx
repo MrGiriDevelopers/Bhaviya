@@ -58,10 +58,10 @@ const Hero = () => {
             
             <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
-                    href="/public/assets/BHAVIYASHREE. M.pdf"
-                    download="BHAVIYASHREE. M.pdf"
+                    href="/assets/BHAVIYASHREEM.pdf"   // ✅ remove "public" from path
+                    download="BHAVIYASHREE-M.pdf"      // ✅ no spaces in filename (safer)
                     className="btn-primary flex items-center gap-2"
-                >
+                  >
                     <Download size={20} />
                     Download Resume
                 </a>
