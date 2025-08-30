@@ -58,8 +58,8 @@ const Hero = () => {
             
             <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
-                    href="/assets/BHAVIYASHREEM.pdf"   // ✅ remove "public" from path
-                    download="BHAVIYASHREE-M.pdf"      // ✅ no spaces in filename (safer)
+                    href="/assets/BHAVIYASHREEM.pdf"   // remove "public" from path
+                    download="BHAVIYASHREE-M.pdf"      // no spaces in filename (safer)
                     className="btn-primary flex items-center gap-2"
                   >
                     <Download size={20} />
@@ -90,15 +90,15 @@ const Hero = () => {
             <div className="hero-avatar relative">
               <div className="w-80 h-80 rounded-full bg-gradient-primary p-1">
                 <div className="w-full h-full rounded-full bg-surface-elevated flex items-center justify-center">
-                  <div className="text-8xl">🤖</div>
+{/*                   <div className="text-8xl">🤖</div> */}
                 </div>
               </div>
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center">
-                <span className="text-2xl">⚡</span>
+{/*                 <span className="text-2xl">⚡</span> */}
               </div>
               <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
-                <span className="text-xl">💡</span>
+{/*                 <span className="text-xl">💡</span> */}
               </div>
             </div>
           </div>
