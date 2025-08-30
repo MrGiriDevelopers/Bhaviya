@@ -36,9 +36,13 @@ const Navbar = () => {
 
   const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const target = document.querySelector(href);
+    const target = document.querySelector(href) as HTMLElement;
     if (target) {
-      gsap.to(window, { duration: 1, scrollTo: target, ease: 'power2.inOut' });
+      gsap.to(window, { 
+        duration: 1, 
+        scrollTo: { y: target.offsetTop, autoKill: false }, 
+        ease: 'power2.inOut' 
+      });
     }
     setIsOpen(false);
   };
