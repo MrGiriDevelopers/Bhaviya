@@ -59,8 +59,8 @@ const Hero = () => {
             <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 {/*               <button className="btn-primary flex items-center gap-2"> */}
                 <a
-                    href="/Sapthagiri-Resume.pdf" // make sure this file is inside public/ folder
-                    download="Sapthagiri-Resume.pdf"
+                    href="/public/assets/BHAVIYASHREE. M.pdf" // make sure this file is inside public/ folder
+                    download="/BHAVIYASHREE. M.pdf"
                     className="btn-primary flex items-center gap-2"
   >                <Download size={20} 
                 />
