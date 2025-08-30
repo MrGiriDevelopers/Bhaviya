@@ -35,29 +35,29 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "your.email@example.com",
-      href: "mailto:your.email@example.com",
+      value: "bhaviyashreekavi@gmail.com",
+      href: "mailto:bhaviyashreekavi@gmail.com",
       description: "Drop me a line anytime"
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/yourprofile",
-      href: "https://linkedin.com/in/yourprofile",
+      value: "linkedin.com/in/bhaviyashree-murugan",
+      href: "https://www.linkedin.com/in/bhaviyashree-murugan",
       description: "Let's connect professionally"
     },
     {
       icon: <Github className="w-6 h-6" />,
       label: "GitHub",
-      value: "github.com/yourusername",
-      href: "https://github.com/yourusername",
+      value: "github.com/Bhaviyashree",
+      href: "https://github.com/Bhaviyashree",
       description: "Check out my projects"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       label: "Location",
       value: "Coimbatore, Tamil Nadu",
-      href: "#",
+      href: "",
       description: "Based in India"
     }
   ];
