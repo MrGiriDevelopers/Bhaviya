@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
+import Home from '@/components/Home';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Skills from '@/components/Skills';
@@ -53,7 +53,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main>
-        <Hero />
+        <Home />
         <About />
         <Services />
         <Skills />
