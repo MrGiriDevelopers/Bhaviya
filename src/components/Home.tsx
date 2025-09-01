@@ -119,7 +119,7 @@ const Home = () => {
             {/* Social Links */}
             <div className="Home-buttons flex gap-4 justify-center lg:justify-start mt-8">
               <a 
-                href="#" 
+                href="https://github.com/Bhaviyashree" 
                 className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
               >
                 <Github size={20} />
