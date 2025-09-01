@@ -7,10 +7,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
+    { href: '#home',label: 'Home' },
     { href: '#about', label: 'About' },
     { href: '#services', label: 'Services' },
-    { href: '#projects', label: 'Portfolio' },
+    { href: '#projects', label: 'Projects' },
     { href: '#blog', label: 'Blog' },
     { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' }
@@ -55,11 +55,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="navbar-item">
+          {/* <div className="navbar-item">
             <span className="glow-text text-2xl font-bold tracking-tight">
               BhaviyaShree<span className="text-primary">.</span>
             </span>
-          </div>
+          </div> */}
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
