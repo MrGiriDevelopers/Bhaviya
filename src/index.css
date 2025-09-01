@@ -7,49 +7,59 @@
 
 @layer base {
   :root {
-    /* Dark theme AI portfolio colors */
-    --background: 222 20% 6%;
-    --foreground: 210 40% 98%;
+    /* Modern Portfolio Dark Theme */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
     
-    --surface: 222 18% 8%;
-    --surface-elevated: 222 16% 12%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
     
-    --primary: 193 100% 50%;
-    --primary-dark: 193 100% 40%;
-    --primary-glow: 193 100% 60%;
+    --surface: 0 0% 8%;
+    --surface-elevated: 0 0% 12%;
+    
+    --primary: 142 85% 60%;
+    --primary-foreground: 0 0% 8%;
+    --primary-glow: 142 85% 70%;
     
     --secondary: 240 100% 70%;
-    --secondary-dark: 240 100% 60%;
+    --secondary-foreground: 0 0% 8%;
     
     --accent: 280 100% 70%;
-    --accent-dark: 280 100% 60%;
+    --accent-foreground: 0 0% 8%;
     
-    --muted: 215 20% 65%;
-    --muted-dark: 215 20% 35%;
+    --muted: 0 0% 60%;
+    --muted-foreground: 0 0% 70%;
+    --muted-dark: 0 0% 45%;
     
-    --border: 217 32% 17%;
-    --border-light: 217 32% 25%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 142 85% 60%;
+    
+    --destructive: 0 62% 60%;
+    --destructive-foreground: 0 0% 98%;
     
     --success: 142 76% 36%;
     --warning: 38 92% 50%;
     --error: 0 84% 60%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--surface)) 50%, hsl(var(--surface-elevated)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--surface)), hsl(var(--surface-elevated)));
     
-    /* Shadows */
-    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 8px 32px hsl(220 20% 4% / 0.4);
-    --shadow-elevated: 0 16px 64px hsl(220 20% 4% / 0.6);
+    /* Enhanced Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 16px 64px hsl(0 0% 0% / 0.6);
+    --shadow-intense: 0 25px 50px -12px hsl(0 0% 0% / 0.7);
     
-    /* Animations */
+    /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
-    --radius: 12px;
+    --radius: 16px;
   }
 }
 
@@ -84,19 +94,37 @@
 }
 
 @layer components {
-  /* Portfolio specific components */
+  /* Modern Portfolio Components */
   .portfolio-card {
-    background: var(--gradient-card);
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--surface-elevated)));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    opacity: 0;
     transition: var(--transition-smooth);
   }
 
   .portfolio-card:hover {
-    border-color: hsl(var(--primary) / 0.5);
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-2px);
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+    transform: translateY(-8px);
+  }
+
+  .portfolio-card:hover::before {
+    opacity: 1;
   }
 
   .glow-text {
@@ -104,79 +132,202 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
   }
 
   .btn-primary {
     background: var(--gradient-primary);
-    color: hsl(var(--background));
+    color: hsl(var(--primary-foreground));
     border: none;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: var(--radius);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.9rem;
     transition: var(--transition-smooth);
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 4px 15px hsl(var(--primary) / 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition-smooth);
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-elevated);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.5);
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
   }
 
   .btn-outline {
     background: transparent;
     color: hsl(var(--primary));
-    border: 1px solid hsl(var(--primary));
-    padding: 12px 24px;
+    border: 2px solid hsl(var(--primary) / 0.5);
+    padding: 12px 26px;
     border-radius: var(--radius);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.9rem;
     transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: hsl(var(--primary) / 0.1);
+    transition: var(--transition-smooth);
+    z-index: -1;
   }
 
   .btn-outline:hover {
-    background: hsl(var(--primary) / 0.1);
-    transform: translateY(-2px);
+    border-color: hsl(var(--primary));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.3);
+  }
+
+  .btn-outline:hover::before {
+    width: 100%;
   }
 
   .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.1;
   }
 
   .skill-tag {
     background: hsl(var(--surface-elevated));
     color: hsl(var(--primary));
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
     font-size: 0.875rem;
     font-weight: 500;
     border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
     transition: var(--transition-smooth);
   }
 
   .skill-tag:hover {
     background: hsl(var(--primary) / 0.1);
     border-color: hsl(var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.2);
+  }
+
+  .skill-tag:hover::before {
+    left: 100%;
+  }
+
+  .service-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: var(--transition-smooth);
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
   }
 
   .floating-widget {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 24px;
+    right: 24px;
     background: var(--gradient-primary);
     border-radius: 50px;
     padding: 16px;
-    box-shadow: var(--shadow-elevated);
+    box-shadow: var(--shadow-intense);
     z-index: 1000;
     cursor: pointer;
     transition: var(--transition-bounce);
   }
 
   .floating-widget:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--shadow-intense), var(--shadow-glow);
+  }
+
+  .blog-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    position: relative;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-elevated);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  .testimonial-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: var(--transition-smooth);
+    position: relative;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+    border-color: hsl(var(--primary) / 0.3);
   }
 }

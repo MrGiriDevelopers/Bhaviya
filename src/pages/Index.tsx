@@ -4,9 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Education from '@/components/Education';
+import Services from '@/components/Services';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
+import Blog from '@/components/Blog';
+import Testimonials from '@/components/Testimonials';
+import Education from '@/components/Education';
 import Certifications from '@/components/Certifications';
 import Internship from '@/components/Internship';
 import Contact from '@/components/Contact';
@@ -52,9 +55,12 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <Education />
+        <Services />
         <Skills />
         <Projects />
+        <Blog />
+        <Testimonials />
+        <Education />
         <Certifications />
         <Internship />
         <Contact />

@@ -48,35 +48,51 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled 
+        ? 'bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-lg' 
+        : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="navbar-item">
-            <span className="glow-text text-xl font-bold">AI Portfolio</span>
+            <span className="glow-text text-2xl font-bold tracking-tight">
+              BhaviyaShree<span className="text-primary">.</span>
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => smoothScroll(e, item.href)}
-                className="navbar-item text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="navbar-item relative text-foreground hover:text-primary transition-all duration-300 font-medium text-sm tracking-wide uppercase group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
 
+          {/* CTA Button - Desktop */}
+          <div className="hidden lg:block navbar-item">
+            <a
+              href="#contact"
+              onClick={(e) => smoothScroll(e, '#contact')}
+              className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold"
+            >
+              Let's Connect
+            </a>
+          </div>
+
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="navbar-item text-foreground hover:text-primary transition-colors duration-300"
+              className="navbar-item text-foreground hover:text-primary transition-all duration-300 p-2 rounded-lg hover:bg-surface"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -84,22 +100,31 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
+        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="bg-background/95 backdrop-blur-xl border-t border-border/50 rounded-b-2xl">
+            <div className="px-4 py-6 space-y-3">
+              {navItems.map((item, index) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => smoothScroll(e, item.href)}
-                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
+                  className="block px-4 py-3 text-foreground hover:text-primary hover:bg-surface/50 rounded-lg transition-all duration-300 font-medium"
                 >
                   {item.label}
                 </a>
               ))}
+              <a
+                href="#contact"
+                onClick={(e) => smoothScroll(e, '#contact')}
+                className="block mt-4 btn-primary text-center"
+              >
+                Let's Connect
+              </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
