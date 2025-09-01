@@ -83,7 +83,7 @@ const Certifications = () => {
                     {cert.icon}
                   </div>
                   <div className="flex-grow">
-                    <div className="text-4xl mb-2">{cert.badge}</div>
+                    {/* <div className="text-4xl mb-2">{cert.badge}</div> */}
                     <div className="text-sm text-primary font-semibold mb-1">{cert.type}</div>
                     <h4 className="text-xl font-semibold glow-text">{cert.title}</h4>
                     <p className="text-muted">by {cert.issuer}</p>
@@ -105,7 +105,7 @@ const Certifications = () => {
                   {achievement.icon}
                 </div>
                 <div className="flex-grow">
-                  <div className="text-4xl mb-2">{achievement.badge}</div>
+                  {/* <div className="text-4xl mb-2">{achievement.badge}</div> */}
                   <h4 className="text-xl font-semibold glow-text mb-2">{achievement.title}</h4>
                   <p className="text-lg text-foreground mb-2">{achievement.description}</p>
                   <div className="text-sm text-primary font-semibold mb-2">
