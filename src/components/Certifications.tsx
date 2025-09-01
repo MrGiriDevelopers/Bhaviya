@@ -38,7 +38,7 @@ const Certifications = () => {
       type: "Programming Fundamentals",
       description: "Comprehensive certification covering Python programming fundamentals, data structures, algorithms, and best practices.",
       icon: <BookOpen className="w-6 h-6" />,
-      badge: "🐍"
+      // badge: "🐍"
     },
     {
       title: "AI & Data Science Certification",
@@ -46,7 +46,7 @@ const Certifications = () => {
       type: "Industry Certification",
       description: "Advanced certification in artificial intelligence and data science covering machine learning, deep learning, and data analytics.",
       icon: <Trophy className="w-6 h-6" />,
-      badge: "🤖"
+      // badge: "🤖"
     }
   ];
 
@@ -57,7 +57,7 @@ const Certifications = () => {
       details: "Published research paper in a peer-reviewed journal focusing on advanced audio processing techniques and feature extraction methods for speech recognition systems.",
       issn: "ISSN 0976-0997",
       icon: <FileText className="w-6 h-6" />,
-      badge: "📄"
+      // badge: "📄"
     }
   ];
 
