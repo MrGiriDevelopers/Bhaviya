@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { MessageCircle, X, Sparkles, Brain, Code, Database } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
 
 const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +70,7 @@ const AIAssistant = () => {
 
       {/* AI Assistant Panel */}
       {isOpen && (
-        <div className="ai-panel fixed bottom-24 right-4 w-80 bg-surface-elevated border border-border rounded-2xl shadow-elevated p-6 z-50">
+        <div className="ai-panel fixed bottom-24 right-4 w-80 sm:w-96 max-w-[calc(100vw-2rem)] bg-surface-elevated border border-border rounded-2xl shadow-elevated p-4 sm:p-6 z-50">
           <div className="text-center mb-6">
             <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center">
               <span className="text-2xl">🤖</span>
@@ -101,11 +102,21 @@ const AIAssistant = () => {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">8.74</div>
+              <AnimatedCounter 
+                end={8.74} 
+                duration={2000} 
+                decimals={2} 
+                className="text-2xl font-bold text-primary" 
+              />
               <div className="text-xs text-muted">CGPA</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-secondary">2+</div>
+              <AnimatedCounter 
+                end={2} 
+                duration={1500} 
+                suffix="+" 
+                className="text-2xl font-bold text-secondary" 
+              />
               <div className="text-xs text-muted">Projects</div>
             </div>
           </div>

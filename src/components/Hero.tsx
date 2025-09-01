@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
 
 const Hero = () => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const Hero = () => {
               Available for Projects
             </div>
             
-            <h1 className="hero-title text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
               A Creative
               <br />
               <span className="glow-text">AI/Data Science</span>
@@ -86,15 +87,30 @@ const Hero = () => {
             {/* Stats */}
             <div className="hero-buttons grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">2+</div>
+                <AnimatedCounter 
+                  end={2} 
+                  duration={2000} 
+                  suffix="+" 
+                  className="text-2xl font-bold text-primary" 
+                />
                 <div className="text-sm text-muted-foreground">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">8.74</div>
+                <AnimatedCounter 
+                  end={8.74} 
+                  duration={2500} 
+                  decimals={2} 
+                  className="text-2xl font-bold text-primary" 
+                />
                 <div className="text-sm text-muted-foreground">CGPA</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">5+</div>
+                <AnimatedCounter 
+                  end={5} 
+                  duration={1500} 
+                  suffix="+" 
+                  className="text-2xl font-bold text-primary" 
+                />
                 <div className="text-sm text-muted-foreground">Technologies</div>
               </div>
             </div>
@@ -126,13 +142,15 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="hero-avatar relative">
               {/* Main Image Container */}
-              <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
-                <div className="w-full h-full rounded-2xl bg-surface border border-border/50 overflow-hidden flex items-center justify-center">
-                  {/* Professional Photo Placeholder */}
-                  <div className="w-full h-full bg-gradient-to-br from-surface-elevated to-card flex items-center justify-center text-6xl">
-                    👩‍💻
-                  </div>
+                <div className="w-full h-full rounded-2xl bg-surface border border-border/50 overflow-hidden">
+                  {/* Professional Photo */}
+                  <img 
+                    src="/lovable-uploads/b5729b6b-58de-453a-b4ce-5c62bc34b014.png" 
+                    alt="Professional portrait of BhaviyaShree" 
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
                 
                 {/* Floating Tech Elements */}

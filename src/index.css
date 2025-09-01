@@ -330,4 +330,19 @@
     box-shadow: var(--shadow-card);
     border-color: hsl(var(--primary) / 0.3);
   }
+
+  /* Mobile responsive improvements */
+  @media (max-width: 768px) {
+    .hero-buttons {
+      @apply flex-col;
+    }
+    
+    .ai-panel {
+      @apply max-w-[calc(100vw-1rem)] w-[calc(100vw-1rem)] right-2;
+    }
+    
+    .floating-tech {
+      @apply scale-75;
+    }
+  }
 }

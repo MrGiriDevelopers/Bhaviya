@@ -8,13 +8,12 @@ const Navbar = () => {
 
   const navItems = [
     { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About Me' },
-    { href: '#education', label: 'Education' },
-    { href: '#skills', label: 'Technical Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#certifications', label: 'Certifications' },
-    { href: '#internship', label: 'Internship' },
-    { href: '#contact', label: 'Contact Me' }
+    { href: '#about', label: 'About' },
+    { href: '#services', label: 'Services' },
+    { href: '#projects', label: 'Portfolio' },
+    { href: '#blog', label: 'Blog' },
+    { href: '#testimonials', label: 'Testimonials' },
+    { href: '#contact', label: 'Contact' }
   ];
 
   useEffect(() => {

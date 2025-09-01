@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Brain, Code, Database, Lightbulb } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,7 +84,7 @@ const About = () => {
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-muted-dark leading-relaxed mb-6">
               As a B.Tech student pursuing Artificial Intelligence & Data Science at Nandha Engineering College, 
-              I've maintained a strong academic record with a CGPA of 8.74. My journey in technology began with 
+              I've maintained a strong academic record with a CGPA of <AnimatedCounter end={8.74} decimals={2} className="inline text-primary font-semibold" />. My journey in technology began with 
               a fascination for how data can be transformed into meaningful insights and intelligent solutions.
             </p>
             <p className="text-lg text-muted-dark leading-relaxed mb-6">
