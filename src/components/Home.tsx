@@ -125,7 +125,7 @@ const Home = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/bhaviyashree-murugan" 
                 className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
               >
                 <Linkedin size={20} />
