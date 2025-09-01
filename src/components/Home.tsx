@@ -117,26 +117,35 @@ const Home = () => {
             </div>
             
             {/* Social Links */}
-            <div className="Home-buttons flex gap-4 justify-center lg:justify-start mt-8">
-              <a 
-                href="https://github.com/Bhaviyashree" 
-                className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
-              >
-                <Github size={20} />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/bhaviyashree-murugan" 
-                className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
-              >
-                <Mail size={20} />
-              </a>
-            </div>
+              <div className="Home-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
+                {/* GitHub */}
+                <a 
+                  href="https://github.com/Bhaviyashree" 
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-105"
+                >
+                  <Github size={20} />
+                  <span className="text-sm font-medium">GitHub</span>
+                </a>
+
+                {/* LinkedIn */}
+                <a 
+                  href="https://www.linkedin.com/in/bhaviyashree-murugan" 
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-105"
+                >
+                  <Linkedin size={20} />
+                  <span className="text-sm font-medium">LinkedIn</span>
+                </a>
+
+                {/* Email */}
+                <a 
+                  href="mailto:yourname@email.com" 
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-105"
+                >
+                  <Mail size={20} />
+                  <span className="text-sm font-medium">Email</span>
+                </a>
+              </div>
+
           </div>
           
         {/* Professional Image Placeholder */}

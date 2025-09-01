@@ -79,7 +79,7 @@ const Navbar = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:block navbar-item">
             <a
-              href="#contact"
+              href="#Contact"
               onClick={(e) => smoothScroll(e, '#contact')}
               className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold"
             >
