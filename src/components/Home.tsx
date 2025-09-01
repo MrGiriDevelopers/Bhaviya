@@ -69,7 +69,7 @@ const Home = () => {
             
             <div className="Home-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <a
-                href="/assets/BHAVIYASHREEM.pdf"
+                href="src/assets/BHAVIYASHREEM.pdf"
                 download="BHAVIYASHREE-M.pdf"
                 className="btn-primary flex items-center gap-3 text-base"
               >
