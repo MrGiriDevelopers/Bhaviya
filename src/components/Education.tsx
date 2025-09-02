@@ -32,9 +32,6 @@ const Education = () => {
   }, []);
 
   const education = [
-    
-
-
     {
       degree: "B.Tech in Artificial Intelligence & Data Science",
       institution: "Nandha Engineering College",

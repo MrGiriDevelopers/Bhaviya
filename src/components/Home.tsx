@@ -104,7 +104,7 @@ const Home = () => {
             
             <div className="Home-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <a
-                href="src/assets/BHAVIYASHREEM.pdf"
+                href="/src/assets/BHAVIYASHREEM.pdf"
                 download="BHAVIYASHREE-M.pdf"
                 className="btn-primary flex items-center gap-3 text-base"
               >
@@ -187,11 +187,11 @@ const Home = () => {
         <div className="flex justify-center lg:justify-end">
         <div className="Home-avatar relative">
           {/* Main Image Container */}
-          <div className="relative w-700px h-700px sm:w-64 sm:h-64 lg:w-80 lg:h-80">
+          <div className="relative w-72 h-72 sm:w-64 sm:h-64 lg:w-80 lg:h-80">
             <div className="w-full h-full rounded-2xl overflow-hidden">
               {/* Professional Photo */}
               <img 
-                src="src/assets/Bhaviya.png" 
+                src={imageSrc} 
                 alt="BhaviyaShree" 
                 className="w-full h-full object-cover object-center rounded-2xl"
               />
