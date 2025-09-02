@@ -7,10 +7,9 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { href: '#home',label: 'Home' },
+    { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
     { href: '#services', label: 'Services' },
-    { href: '#projects', label: 'Projects' },
     { href: '#blog', label: 'Blog' },
     { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' }
@@ -53,35 +52,27 @@ const Navbar = () => {
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          {/* <div className="navbar-item">
-            <span className="glow-text text-2xl font-bold tracking-tight">
-              BhaviyaShree<span className="text-primary">.</span>
-            </span>
-          </div> */}
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+        <div className="flex items-center justify-center w-full h-20">
+          {/* Centered Desktop Navigation */}
+          <div className="hidden lg:flex items-center justify-center space-x-8 flex-1">
             {navItems.map((item, index) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => smoothScroll(e, item.href)}
-                className="navbar-item relative text-foreground hover:text-primary transition-all duration-300 font-medium text-sm tracking-wide uppercase group"
+                className="navbar-item relative text-foreground hover:text-primary transition-all duration-500 font-medium text-sm tracking-wide uppercase group transform hover:scale-110"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-500 group-hover:w-full"></span>
+                <span className="absolute inset-0 rounded-lg bg-primary/10 opacity-0 transition-all duration-300 group-hover:opacity-100 -z-10"></span>
               </a>
             ))}
-          </div>
-
-          {/* CTA Button - Desktop */}
-          <div className="hidden lg:block navbar-item">
+            
+            {/* Let's Connect Button */}
             <a
-              href="#Contact"
+              href="#contact"
               onClick={(e) => smoothScroll(e, '#contact')}
-              className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold"
+              className="navbar-item btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transform hover:scale-105 transition-all duration-300"
             >
               Let's Connect
             </a>
