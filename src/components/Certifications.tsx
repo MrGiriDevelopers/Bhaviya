@@ -111,6 +111,7 @@ const Certifications = () => {
                   <div className="text-sm text-primary font-semibold mb-2">
                     Journal ISSN: {achievement.issn}
                   </div>
+
                 </div>
               </div>
               <p className="text-muted-dark leading-relaxed">{achievement.details}</p>

@@ -32,6 +32,9 @@ const Education = () => {
   }, []);
 
   const education = [
+    
+
+
     {
       degree: "B.Tech in Artificial Intelligence & Data Science",
       institution: "Nandha Engineering College",
@@ -67,6 +70,28 @@ const Education = () => {
             My academic journey in technology and engineering, building a strong foundation 
             in artificial intelligence and data science.
           </p>
+
+        </div>
+        
+        <div className="testimonial-item portfolio-card p-8 mt-16">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-primary mb-2">15+</div>
+              <div className="text-muted-foreground">Happy Collaborators</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary mb-2">100%</div>
+              <div className="text-muted-foreground">Project Success Rate</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="text-muted-foreground">Technologies Mastered</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+              <div className="text-muted-foreground">Commitment</div>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-8">

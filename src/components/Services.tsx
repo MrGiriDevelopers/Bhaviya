@@ -76,6 +76,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="service-card section-title">My Special Services</h2>
+          
           <p className="service-card text-lg text-muted-foreground max-w-3xl mx-auto">
             Offering comprehensive solutions across AI, data science, and full-stack development 
             to bring your innovative ideas to life with cutting-edge technology.
