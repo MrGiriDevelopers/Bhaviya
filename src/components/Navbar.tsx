@@ -36,10 +36,10 @@ const Navbar = () => {
     e.preventDefault();
     const target = document.querySelector(href) as HTMLElement;
     if (target) {
-      gsap.to(window, { 
-        duration: 1, 
-        scrollTo: { y: target.offsetTop, autoKill: false }, 
-        ease: 'power2.inOut' 
+      const offsetTop = target.offsetTop - 80; // Account for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
       });
     }
     setIsOpen(false);
