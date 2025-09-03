@@ -76,8 +76,78 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 bg-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" ref={sectionRef} className="py-20 bg-surface relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        {/* Base gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-surface via-background to-surface-elevated"></div>
+        
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px',
+            animation: 'gridMove 25s linear infinite'
+          }}></div>
+        </div>
+        
+        {/* Code-themed floating particles */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 15 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute text-primary/20 animate-pulse font-mono text-xs"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 8}s`,
+                animationDuration: `${4 + Math.random() * 6}s`
+              }}
+            >
+              {['</>', '{}', '[]', '()', '<AI>', 'ML', 'DB', '++'][Math.floor(Math.random() * 8)]}
+            </div>
+          ))}
+        </div>
+        
+        {/* Tech-themed glowing orbs */}
+        <div className="absolute top-1/3 left-1/5 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/5 w-64 h-64 bg-secondary/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        
+        {/* Binary pattern overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 font-mono text-xs text-primary" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238b5cf6' fill-opacity='0.1'%3E%3Ctext x='10' y='15' font-family='monospace' font-size='8'%3E1010%3C/text%3E%3Ctext x='10' y='30' font-family='monospace' font-size='8'%3E0101%3C/text%3E%3Ctext x='10' y='45' font-family='monospace' font-size='8'%3E1100%3C/text%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            animation: 'gridMove 30s linear infinite reverse'
+          }}></div>
+        </div>
+        
+        {/* Moving geometric shapes - tech themed */}
+        <div className="absolute top-1/4 right-1/4 w-20 h-20 border-2 border-primary/15 rotate-45 animate-spin" style={{ animationDuration: '25s' }}>
+          <div className="absolute inset-2 border border-primary/10 rounded-full"></div>
+        </div>
+        <div className="absolute bottom-1/4 left-1/4 w-16 h-16 border-2 border-secondary/20 rounded-lg animate-bounce" style={{ animationDuration: '4s' }}>
+          <div className="absolute inset-1 bg-secondary/5 rounded"></div>
+        </div>
+        
+        {/* Circuit-like connecting lines */}
+        <div className="absolute inset-0 opacity-5">
+          <svg width="100%" height="100%" className="absolute inset-0">
+            <defs>
+              <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M 10,30 L 90,30 M 30,10 L 30,90 M 70,10 L 70,90" stroke="rgba(139, 92, 246, 0.1)" strokeWidth="1"/>
+                <circle cx="30" cy="30" r="2" fill="rgba(139, 92, 246, 0.2)"/>
+                <circle cx="70" cy="70" r="2" fill="rgba(139, 92, 246, 0.2)"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circuit)"/>
+          </svg>
+        </div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="skills-category section-title">Technical Skills</h2>
           <p className="skills-category text-lg text-muted-dark max-w-3xl mx-auto">
