@@ -1,12 +1,46 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Github, Users, Zap } from 'lucide-react';
+import { 
+  ExternalLink, 
+  Github, 
+  Users, 
+  Zap, 
+  Code2, 
+  Database, 
+  Globe, 
+  Server, 
+  Cpu, 
+  Smartphone,
+  BarChart3,
+  Settings,
+  MapPin
+} from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
+
+  // Technology mapping with icons
+  const techIcons: Record<string, { icon: JSX.Element; color: string }> = {
+    "React": { icon: <Code2 className="w-4 h-4" />, color: "text-blue-400" },
+    "Node.js": { icon: <Server className="w-4 h-4" />, color: "text-green-400" },
+    "Express.js": { icon: <Server className="w-4 h-4" />, color: "text-gray-400" },
+    "MongoDB": { icon: <Database className="w-4 h-4" />, color: "text-green-500" },
+    "Chart.js": { icon: <BarChart3 className="w-4 h-4" />, color: "text-orange-400" },
+    "C++": { icon: <Code2 className="w-4 h-4" />, color: "text-blue-500" },
+    "GSM Module": { icon: <Smartphone className="w-4 h-4" />, color: "text-purple-400" },
+    "GPS": { icon: <MapPin className="w-4 h-4" />, color: "text-red-400" },
+    "Arduino": { icon: <Cpu className="w-4 h-4" />, color: "text-teal-400" },
+    "Embedded Systems": { icon: <Settings className="w-4 h-4" />, color: "text-indigo-400" },
+    "JavaScript": { icon: <Code2 className="w-4 h-4" />, color: "text-yellow-400" },
+    "TypeScript": { icon: <Code2 className="w-4 h-4" />, color: "text-blue-400" },
+    "Python": { icon: <Code2 className="w-4 h-4" />, color: "text-green-400" },
+    "MySQL": { icon: <Database className="w-4 h-4" />, color: "text-blue-500" },
+    "HTML5": { icon: <Globe className="w-4 h-4" />, color: "text-orange-500" },
+    "CSS3": { icon: <Globe className="w-4 h-4" />, color: "text-blue-500" }
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -100,12 +134,21 @@ const Projects = () => {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold mb-3">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
+                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <Settings className="w-5 h-5 text-primary" />
+                  Technologies Used
+                </h4>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex} className="skill-tag">
-                      {tech}
-                    </span>
+                    <div 
+                      key={techIndex} 
+                      className="flex items-center gap-3 p-3 rounded-lg bg-surface border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105"
+                    >
+                      <div className={`${techIcons[tech]?.color || 'text-primary'} flex-shrink-0`}>
+                        {techIcons[tech]?.icon || <Code2 className="w-4 h-4" />}
+                      </div>
+                      <span className="text-sm font-medium text-foreground truncate">{tech}</span>
+                    </div>
                   ))}
                 </div>
               </div>
