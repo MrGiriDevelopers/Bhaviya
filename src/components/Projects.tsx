@@ -17,26 +17,34 @@ import {
   MapPin
 } from 'lucide-react';
 
+// Import technology brand logos
+import reactLogo from '@/assets/tech-logos/react.png';
+import nodejsLogo from '@/assets/tech-logos/nodejs.png';
+import mongodbLogo from '@/assets/tech-logos/mongodb.png';
+import javascriptLogo from '@/assets/tech-logos/javascript.png';
+import pythonLogo from '@/assets/tech-logos/python.png';
+import cppLogo from '@/assets/tech-logos/cpp.png';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Technology mapping with icons
-  const techIcons: Record<string, { icon: JSX.Element; color: string }> = {
-    "React": { icon: <Code2 className="w-4 h-4" />, color: "text-blue-400" },
-    "Node.js": { icon: <Server className="w-4 h-4" />, color: "text-green-400" },
+  // Technology mapping with real brand logos
+  const techIcons: Record<string, { logo?: string; icon: JSX.Element; color: string }> = {
+    "React": { logo: reactLogo, icon: <Code2 className="w-4 h-4" />, color: "text-blue-400" },
+    "Node.js": { logo: nodejsLogo, icon: <Server className="w-4 h-4" />, color: "text-green-400" },
     "Express.js": { icon: <Server className="w-4 h-4" />, color: "text-gray-400" },
-    "MongoDB": { icon: <Database className="w-4 h-4" />, color: "text-green-500" },
+    "MongoDB": { logo: mongodbLogo, icon: <Database className="w-4 h-4" />, color: "text-green-500" },
     "Chart.js": { icon: <BarChart3 className="w-4 h-4" />, color: "text-orange-400" },
-    "C++": { icon: <Code2 className="w-4 h-4" />, color: "text-blue-500" },
+    "C++": { logo: cppLogo, icon: <Code2 className="w-4 h-4" />, color: "text-blue-500" },
     "GSM Module": { icon: <Smartphone className="w-4 h-4" />, color: "text-purple-400" },
     "GPS": { icon: <MapPin className="w-4 h-4" />, color: "text-red-400" },
     "Arduino": { icon: <Cpu className="w-4 h-4" />, color: "text-teal-400" },
     "Embedded Systems": { icon: <Settings className="w-4 h-4" />, color: "text-indigo-400" },
-    "JavaScript": { icon: <Code2 className="w-4 h-4" />, color: "text-yellow-400" },
+    "JavaScript": { logo: javascriptLogo, icon: <Code2 className="w-4 h-4" />, color: "text-yellow-400" },
     "TypeScript": { icon: <Code2 className="w-4 h-4" />, color: "text-blue-400" },
-    "Python": { icon: <Code2 className="w-4 h-4" />, color: "text-green-400" },
+    "Python": { logo: pythonLogo, icon: <Code2 className="w-4 h-4" />, color: "text-green-400" },
     "MySQL": { icon: <Database className="w-4 h-4" />, color: "text-blue-500" },
     "HTML5": { icon: <Globe className="w-4 h-4" />, color: "text-orange-500" },
     "CSS3": { icon: <Globe className="w-4 h-4" />, color: "text-blue-500" }
@@ -144,8 +152,18 @@ const Projects = () => {
                       key={techIndex} 
                       className="flex items-center gap-3 p-3 rounded-lg bg-surface border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105"
                     >
-                      <div className={`${techIcons[tech]?.color || 'text-primary'} flex-shrink-0`}>
-                        {techIcons[tech]?.icon || <Code2 className="w-4 h-4" />}
+                      <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
+                        {techIcons[tech]?.logo ? (
+                          <img 
+                            src={techIcons[tech].logo} 
+                            alt={`${tech} logo`}
+                            className="w-6 h-6 object-contain"
+                          />
+                        ) : (
+                          <div className={`${techIcons[tech]?.color || 'text-primary'}`}>
+                            {techIcons[tech]?.icon || <Code2 className="w-4 h-4" />}
+                          </div>
+                        )}
                       </div>
                       <span className="text-sm font-medium text-foreground truncate">{tech}</span>
                     </div>
