@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
-import imageSrc from 'src/assets/Bhaviya.png';
+import imageSrc from '@/assets/Bhaviya.png';
 
 const Home = () => {
   useEffect(() => {
